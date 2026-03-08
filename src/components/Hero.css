@@ -82,6 +82,22 @@
     }
 }
 
+.hero-badge-text {
+    background: linear-gradient(90deg, #ffffff, #a1a1aa, #ffffff);
+    background-size: 200% auto;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    animation: shineText 3s linear infinite;
+    font-weight: 600;
+}
+
+@keyframes shineText {
+    to {
+        background-position: 200% center;
+    }
+}
+
 .hero-profile-image {
     width: 200px;
     height: 200px;

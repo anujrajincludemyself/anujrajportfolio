@@ -47,7 +47,7 @@ const Hero = () => {
             >
                 <motion.div className="hero-badge" variants={itemVariants}>
                     <span className="pulse-dot"></span>
-                    <span>Open for Opportunities</span>
+                    <span className="hero-badge-text">Open for Opportunities</span>
                 </motion.div>
 
                 <motion.div
