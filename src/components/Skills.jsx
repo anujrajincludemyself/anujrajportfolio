@@ -4,7 +4,8 @@ import {
     SiReact, SiTailwindcss, SiBootstrap, SiJetpackcompose,
     SiNodedotjs, SiExpress, SiFlask, SiPrisma, SiSqlalchemy,
     SiPostgresql, SiRedis, SiFirebase, SiSupabase, SiMysql,
-    SiPostman, SiSwagger, SiJest, SiFigma, SiNgrok
+    SiPostman, SiSwagger, SiJest, SiFigma, SiNgrok,
+    SiMongodb
 } from 'react-icons/si';
 import { FaCode, FaBrain, FaChartBar, FaLaptopCode, FaMobileAlt, FaCogs, FaDatabase, FaTools } from 'react-icons/fa';
 import './Skills.css';
@@ -53,7 +54,8 @@ const Skills = () => {
                 { name: 'PostgreSQL', icon: SiPostgresql, level: 85 },
                 { name: 'Redis', icon: SiRedis, level: 70 },
                 { name: 'Firebase', icon: SiFirebase, level: 80 },
-                { name: 'Supabase', icon: SiSupabase, level: 75 }
+                { name: 'Supabase', icon: SiSupabase, level: 75 },
+                { name: 'MongoDB', icon: SiMongodb, level: 80 }
             ]
         },
         {

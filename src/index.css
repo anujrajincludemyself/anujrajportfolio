@@ -12,8 +12,8 @@
   --bg-card: rgba(20, 20, 20, 0.7);
   --bg-card-hover: rgba(30, 30, 30, 0.9);
 
-  --accent-primary: #6366f1;
-  --accent-secondary: #8b5cf6;
+  --accent-primary: #0b0b15;
+  --accent-secondary: #070310;
   --accent-gradient: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
 
   --text-primary: #ffffff;

@@ -62,7 +62,7 @@ const Skills = () => {
     const personalAchievements = [
         'Completed Android 14 & Kotlin Development Masterclass (Udemy)',
         `'CGPA: 8.8 (Till 5th Semester), B.Tech IT'`,
-        'Solved 100+ questions on LeetCode'
+        'Solved 150+ questions on LeetCode'
     ];
 
     return (
