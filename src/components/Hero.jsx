@@ -46,7 +46,8 @@ const Hero = () => {
                 animate="visible"
             >
                 <motion.div className="hero-badge" variants={itemVariants}>
-                    <span>✨ Open for Opportunities</span>
+                    <span className="pulse-dot"></span>
+                    <span>Open for Opportunities</span>
                 </motion.div>
 
                 <motion.div
