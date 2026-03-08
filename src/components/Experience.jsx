@@ -1,11 +1,11 @@
 import { motion } from 'framer-motion';
-import { FaBriefcase, FaCalendar } from 'react-icons/fa';
+import { FaBriefcase, FaCalendar, FaTrophy, FaMedal } from 'react-icons/fa';
 import './Experience.css';
 
 const Experience = () => {
     const experiences = [
         {
-            role: 'Full Stack Developer Intern',
+            role: 'SDE Intern',
             company: 'MediHut',
             period: 'Present',
             current: true,
@@ -19,7 +19,6 @@ const Experience = () => {
             role: 'Full Stack Developer Intern',
             company: 'Bucket List',
             period: 'Present',
-            current: true,
             highlights: [
                 'Built the complete frontend from scratch using Next.js 14, TypeScript, and Tailwind CSS',
                 'Implemented responsive layouts, Currently developing backend services using NestJS'
@@ -142,7 +141,9 @@ const Experience = () => {
                                 viewport={{ once: true }}
                                 whileHover={{ scale: 1.05 }}
                             >
-                                <div className="achievement-icon">😊</div>
+                                <div className="achievement-icon">
+                                    {index === 0 ? <FaTrophy style={{ color: '#facc15', fontSize: '1.5rem' }} /> : <FaMedal style={{ color: '#60a5fa', fontSize: '1.5rem' }} />}
+                                </div>
                                 <h4 className="achievement-title">{achievement.title}</h4>
                                 <p className="achievement-org">{achievement.organization}</p>
                                 <p className="achievement-period">{achievement.period}</p>

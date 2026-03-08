@@ -37,9 +37,9 @@
 }
 
 .location-card {
-    background: var(--bg-card);
+    background: rgba(255, 255, 255, 0.9);
     backdrop-filter: blur(10px);
-    border: 1px solid var(--border-color);
+    border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 1rem;
     padding: 1.5rem 2rem;
     display: flex;
@@ -51,9 +51,9 @@
 }
 
 .location-card:hover {
-    background: var(--bg-card-hover);
-    border-color: var(--accent-primary);
-    box-shadow: 0 0 30px var(--glow-color);
+    background: #ffffff;
+    border-color: #ef4444;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
 }
 
 .location-icon {
@@ -71,12 +71,12 @@
     font-size: 1.1rem;
     font-weight: 700;
     margin-bottom: 0.25rem;
-    color: var(--text-primary);
+    color: #111827;
 }
 
 .location-info p {
     font-size: 0.9rem;
-    color: var(--text-secondary);
+    color: #4b5563;
 }
 
 /* Responsive */

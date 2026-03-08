@@ -1,52 +1,79 @@
 import { motion } from 'framer-motion';
 import {
-    SiJavascript, SiPython, SiCplusplus, SiKotlin,
-    SiReact, SiNodedotjs, SiNextdotjs, SiTailwindcss,
-    SiMongodb, SiMysql, SiGit, SiGithub,
-    SiFigma, SiPostman
+    SiJavascript, SiPython, SiCplusplus, SiKotlin, SiC, SiTypescript,
+    SiReact, SiTailwindcss, SiBootstrap, SiJetpackcompose,
+    SiNodedotjs, SiExpress, SiFlask, SiPrisma, SiSqlalchemy,
+    SiPostgresql, SiRedis, SiFirebase, SiSupabase, SiMysql,
+    SiPostman, SiSwagger, SiJest, SiFigma, SiNgrok
 } from 'react-icons/si';
-import { FaCode } from 'react-icons/fa';
+import { FaCode, FaBrain, FaChartBar, FaLaptopCode, FaMobileAlt, FaCogs, FaDatabase, FaTools } from 'react-icons/fa';
 import './Skills.css';
 
 const Skills = () => {
     const skillCategories = [
         {
             title: 'Languages',
-            icon: '💻',
+            icon: <FaLaptopCode />,
             skills: [
                 { name: 'C++', icon: SiCplusplus, level: 90 },
                 { name: 'JavaScript', icon: SiJavascript, level: 85 },
-                { name: 'Python', icon: SiPython, level: 80 },
-                { name: 'Kotlin', icon: SiKotlin, level: 75 }
+                { name: 'TypeScript', icon: SiTypescript, level: 80 },
+                { name: 'Python (Programming Language)', icon: SiPython, level: 80 },
+                { name: 'Kotlin', icon: SiKotlin, level: 75 },
+                { name: 'C (Programming Language)', icon: SiC, level: 80 },
+                { name: 'SQL', icon: SiMysql, level: 85 }
             ]
         },
         {
-            title: 'Web Development',
-            icon: '🌐',
+            title: 'Frontend & Mobile',
+            icon: <FaMobileAlt />,
             skills: [
                 { name: 'React.js', icon: SiReact, level: 90 },
-                { name: 'Next.js', icon: SiNextdotjs, level: 85 },
+                { name: 'React Native', icon: SiReact, level: 80 },
+                { name: 'Tailwind CSS', icon: SiTailwindcss, level: 90 },
+                { name: 'Bootstrap (Framework)', icon: SiBootstrap, level: 80 },
+                { name: 'Compose', icon: SiJetpackcompose, level: 70 }
+            ]
+        },
+        {
+            title: 'Backend',
+            icon: <FaCogs />,
+            skills: [
                 { name: 'Node.js', icon: SiNodedotjs, level: 85 },
-                { name: 'Tailwind CSS', icon: SiTailwindcss, level: 90 }
+                { name: 'Express.js', icon: SiExpress, level: 85 },
+                { name: 'Flask', icon: SiFlask, level: 75 },
+                { name: 'Prisma ORM', icon: SiPrisma, level: 80 },
+                { name: 'SQLAlchemy', icon: SiSqlalchemy, level: 75 }
             ]
         },
         {
-            title: 'Database',
-            icon: '🗄️',
+            title: 'Database & Cloud',
+            icon: <FaDatabase />,
             skills: [
-                { name: 'MongoDB', icon: SiMongodb, level: 85 },
-                { name: 'MySQL', icon: SiMysql, level: 80 }
+                { name: 'PostgreSQL', icon: SiPostgresql, level: 85 },
+                { name: 'Redis', icon: SiRedis, level: 70 },
+                { name: 'Firebase', icon: SiFirebase, level: 80 },
+                { name: 'Supabase', icon: SiSupabase, level: 75 }
             ]
         },
         {
-            title: 'Tools & Others',
-            icon: '🛠️',
+            title: 'Tools & Testing',
+            icon: <FaTools />,
             skills: [
-                { name: 'Git', icon: SiGit, level: 85 },
-                { name: 'GitHub', icon: SiGithub, level: 85 },
-                { name: 'VS Code', icon: FaCode, level: 90 },
+                { name: 'Postman API', icon: SiPostman, level: 85 },
+                { name: 'Swagger API', icon: SiSwagger, level: 75 },
+                { name: 'Jest', icon: SiJest, level: 75 },
                 { name: 'Figma', icon: SiFigma, level: 75 },
-                { name: 'Postman', icon: SiPostman, level: 80 }
+                { name: 'Ngrok', icon: SiNgrok, level: 80 }
+            ]
+        },
+        {
+            title: 'Concepts & AI',
+            icon: <FaBrain />,
+            skills: [
+                { name: 'Large Language Models (LLM)', icon: FaBrain, level: 75 },
+                { name: 'Data Analysis', icon: FaChartBar, level: 80 },
+                { name: 'Object-Oriented Programming (OOP)', icon: FaCode, level: 85 }
             ]
         }
     ];
@@ -62,7 +89,7 @@ const Skills = () => {
     const personalAchievements = [
         'Completed Android 14 & Kotlin Development Masterclass (Udemy)',
         'CGPA: 8.8 (Till 5th Semester), B.Tech IT',
-        'Solved 100+ questions on LeetCode'
+        'Solved 150+ questions on LeetCode'
     ];
 
     return (

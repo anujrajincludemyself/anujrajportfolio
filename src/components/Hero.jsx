@@ -67,7 +67,7 @@ const Hero = () => {
                 </motion.p>
 
                 <motion.p className="hero-description" variants={itemVariants}>
-                    Building innovative web applications with the MERN stack and exploring the endless possibilities of code.
+                    Building innovative web applications with full stack technologies and exploring the endless possibilities of code.
                     Currently studying Information Technology at RTU Kota while crafting exceptional digital experiences.
                 </motion.p>
 

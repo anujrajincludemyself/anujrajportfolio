@@ -12,7 +12,7 @@ const GlobeComponent = () => {
             lat: 25.5941,
             lng: 85.1376,
             size: 0.8,
-            color: '#6366f1',
+            color: '#ef4444', // Red-pink marker
             label: 'Home',
             city: 'Patna, Bihar'
         },
@@ -20,7 +20,7 @@ const GlobeComponent = () => {
             lat: 25.2138,
             lng: 75.8648,
             size: 0.8,
-            color: '#8b5cf6',
+            color: '#ef4444', // Red-pink marker
             label: 'Currently',
             city: 'Kota, Rajasthan'
         }
@@ -31,7 +31,7 @@ const GlobeComponent = () => {
         startLng: 85.1376,
         endLat: 25.2138,
         endLng: 75.8648,
-        color: ['#6366f1', '#8b5cf6']
+        color: ['#ef4444', '#f87171']
     }];
 
     useEffect(() => {
@@ -89,9 +89,9 @@ const GlobeComponent = () => {
                 >
                     <Globe
                         ref={globeEl}
-                        globeImageUrl="//unpkg.com/three-globe/example/img/earth-night.jpg"
+                        globeImageUrl="//unpkg.com/three-globe/example/img/earth-day.jpg"
                         bumpImageUrl="//unpkg.com/three-globe/example/img/earth-topology.png"
-                        backgroundImageUrl="//unpkg.com/three-globe/example/img/night-sky.png"
+                        backgroundColor="rgba(0,0,0,0)"
 
                         pointsData={locations}
                         pointAltitude={0.05}
@@ -99,18 +99,19 @@ const GlobeComponent = () => {
                         pointColor="color"
                         pointLabel={d => `
               <div style="
-                background: rgba(17, 17, 24, 0.95);
+                background: rgba(255, 255, 255, 0.95);
                 padding: 12px 16px;
                 border-radius: 8px;
-                border: 1px solid rgba(99, 102, 241, 0.3);
-                color: white;
+                border: 1px solid rgba(0, 0, 0, 0.1);
+                color: #111827;
                 font-family: Inter, sans-serif;
                 backdrop-filter: blur(10px);
+                box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
               ">
                 <div style="font-size: 14px; font-weight: 600; color: ${d.color}; margin-bottom: 4px;">
                   ${d.label}
                 </div>
-                <div style="font-size: 12px; color: #a1a1aa;">
+                <div style="font-size: 12px; color: #4b5563;">
                   ${d.city}
                 </div>
               </div>
@@ -123,7 +124,7 @@ const GlobeComponent = () => {
                         arcDashAnimateTime={3000}
                         arcStroke={0.5}
 
-                        atmosphereColor="#6366f1"
+                        atmosphereColor="#93c5fd"
                         atmosphereAltitude={0.15}
 
                         width={window.innerWidth > 768 ? 800 : window.innerWidth - 40}
