@@ -1,12 +1,61 @@
+import { useEffect, useState } from 'react';
 import './index.css';
 
 function App() {
+  const resumeDownloadUrl = 'https://drive.google.com/uc?export=download&id=1RNn1AMplo79xbv8-4TQmTEO2aSvLVj5y';
+
+  const [theme, setTheme] = useState(() => {
+    const savedTheme = window.localStorage.getItem('resume-theme');
+
+    if (savedTheme === 'dark' || savedTheme === 'light') {
+      return savedTheme;
+    }
+
+    return 'dark';
+  });
+
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', theme);
+    window.localStorage.setItem('resume-theme', theme);
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme((prevTheme) => (prevTheme === 'dark' ? 'light' : 'dark'));
+  };
+
   return (
     <main className="resume-shell">
+      <div className="ambient-layer" aria-hidden="true">
+        <span className="orb orb-a"></span>
+        <span className="orb orb-b"></span>
+        <span className="orb orb-c"></span>
+        <span className="particle p1"></span>
+        <span className="particle p2"></span>
+        <span className="particle p3"></span>
+        <span className="particle p4"></span>
+        <span className="particle p5"></span>
+        <span className="particle p6"></span>
+      </div>
+
       <article className="resume-paper">
         <header className="resume-header">
+          <p className="status-pill">Open to SDE and Full Stack opportunities</p>
           <h1>ANUJ RAJ</h1>
           <p className="role">Software Engineer</p>
+          <div className="meta-badges">
+            <span>3 Production Systems</span>
+            <span>Top 15 / 100+ ReKon</span>
+            <span>8.6 CGPA</span>
+            <span>150+ LeetCode</span>
+          </div>
+          <div className="resume-actions">
+            <button type="button" className="action-btn action-btn-theme" onClick={toggleTheme}>
+              {theme === 'dark' ? 'Switch to Light' : 'Switch to Dark'}
+            </button>
+            <a className="action-btn action-btn-download" href={resumeDownloadUrl} target="_blank" rel="noreferrer" download>
+              Download Resume
+            </a>
+          </div>
           <p className="contact-line">
             <a href="mailto:anujraj24go@gmail.com">anujraj24go@gmail.com</a>
             <span>|</span>
@@ -23,7 +72,7 @@ function App() {
         </header>
 
         <section className="resume-grid">
-          <div className="resume-column">
+          <div className="resume-column resume-column-left">
             <section className="resume-section">
               <h2>Experience</h2>
 
@@ -109,7 +158,7 @@ function App() {
             </section>
           </div>
 
-          <div className="resume-column">
+          <div className="resume-column resume-column-right">
             <section className="resume-section">
               <h2>Education</h2>
               <article className="resume-item compact-item">
