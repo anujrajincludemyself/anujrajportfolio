@@ -207,7 +207,6 @@ a:hover {
   box-shadow: var(--paper-shadow);
   border-radius: 18px;
   padding: 1.7rem 1.8rem;
-  animation: riseIn 0.75s ease-out both;
   overflow: hidden;
 }
 
@@ -310,7 +309,6 @@ a:hover {
   letter-spacing: 0.02em;
   cursor: pointer;
   transform: translateY(0);
-  animation: actionEntry 0.8s ease both;
 }
 
 .action-btn:hover {
@@ -377,43 +375,15 @@ a:hover {
 }
 
 .resume-column-left {
-  animation: columnSlideLeft 0.9s ease-out both;
 }
 
 .resume-column-right {
-  animation: columnSlideRight 0.9s ease-out both;
-  animation-delay: 0.08s;
 }
 
 .resume-section {
   border-top: 1px solid var(--line);
   padding-top: 0.48rem;
   padding-bottom: 0.08rem;
-  animation: sectionIn 0.6s ease both;
-}
-
-.resume-column .resume-section:nth-child(1) {
-  animation-delay: 0.06s;
-}
-
-.resume-column .resume-section:nth-child(2) {
-  animation-delay: 0.14s;
-}
-
-.resume-column .resume-section:nth-child(3) {
-  animation-delay: 0.22s;
-}
-
-.resume-column .resume-section:nth-child(4) {
-  animation-delay: 0.3s;
-}
-
-.resume-column .resume-section:nth-child(5) {
-  animation-delay: 0.38s;
-}
-
-.resume-column .resume-section:nth-child(6) {
-  animation-delay: 0.46s;
 }
 
 .resume-section h2 {
@@ -439,23 +409,28 @@ a:hover {
 
 .resume-item {
   margin-bottom: 0.45rem;
-  transition: transform 0.22s ease, background-color 0.22s ease;
   border-radius: 10px;
   padding: 0.16rem 0.2rem;
-  animation: itemIn 0.7s ease both;
-}
-
-.resume-section .resume-item:nth-of-type(2) {
-  animation-delay: 0.12s;
-}
-
-.resume-section .resume-item:nth-of-type(3) {
-  animation-delay: 0.2s;
 }
 
 .resume-item:hover {
-  transform: translateX(4px);
   background: var(--item-hover);
+}
+
+.scroll-progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: var(--accent);
+  transform-origin: 0%;
+  z-index: 1000;
+  box-shadow: 0 0 10px var(--accent);
+}
+
+.copy-email-link {
+  cursor: pointer;
 }
 
 .resume-item h3 {
