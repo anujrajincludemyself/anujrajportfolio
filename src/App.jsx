@@ -150,7 +150,7 @@ function App() {
                   <ul>
                     <li>Engineered a cross-platform Rider Delivery App (React Native, Node.js, Prisma, PostgreSQL, Redis) with live dispatch and GPS tracking; cut dispatch latency by ~35% via Redis caching and row-level mutex locking.</li>
                     <li>Built Pharmacy Console CRM serving 2+ live pharmacies with real-time inventory, order intake, and prescription workflows; achieved 50% performance gain by reducing API response payloads from ~120KB to under 30KB with field projection, removal of nested redundant objects, and lazy pagination.</li>
-                    <li>Shipped a responsive pharmacy website (React.js, TypeScript) with 40% load improvement and delivered a full admin panel for riders, orders, and inventory using Tailwind CSS and REST APIs.</li>
+                    <li>Shipped a responsive pharmacy website (React.js, TypeScript) with 40% load improvement and built a full admin panel for riders, orders, and inventory.</li>
                   </ul>
                 </motion.article>
 
@@ -178,8 +178,8 @@ function App() {
                   </div>
                   <p className="item-subheading">IIT Patna (under Prof. Mayank Agarwal, Dept. of CSE)</p>
                   <ul>
-                    <li>Built a multi-constraint exam seating allocator (Python, Streamlit) handling sparse/dense fill modes, per-room buffer capacity, and building-adjacency optimization to minimize faculty movement.</li>
-                    <li>Engineered automated clash detection via roll-number set intersections and generated structured Excel outputs (overall_seating + seats_left) with robust try/catch recovery and Python logging.</li>
+                    <li>Built a multi-constraint exam seating allocator (Python, Streamlit) handling sparse/dense fill modes, per-room buffer capacity, and building-adjacency optimization to minimize faculty movement; deployed live on Streamlit.</li>
+                    <li>Engineered automated clash detection via roll-number set intersections and produced structured Excel outputs (overall_seating + seats_left) with full try/catch recovery and Python logging to errors.txt.</li>
                   </ul>
                 </motion.article>
               </motion.section>
@@ -202,7 +202,7 @@ function App() {
                     </p>
                   </div>
                   <ul>
-                    <li>Built a full-stack AI platform detecting fake news in text and video using FastAPI, TF-IDF vectorization, and video-forensics ML models; ranked Top 15 of 100+ teams at ReKon Hackathon.</li>
+                    <li>Built a full-stack AI platform detecting fake news in text and video using FastAPI, Express, TF-IDF vectorization, and video-forensics ML models; ranked Top 15 of 100+ teams at ReKon Hackathon.</li>
                     <li>Implemented JWT authentication, multi-provider NLP fallback, and an interactive analytics dashboard for confidence reporting.</li>
                   </ul>
                 </motion.article>
@@ -222,13 +222,27 @@ function App() {
 
                 <motion.article className="resume-item" {...itemHoverProps}>
                   <div className="item-heading project-heading">
+                    <h3>Khilao - AI Recipe Sharing Platform</h3>
+                    <p>
+                      <motion.a whileHover={{ scale: 1.05 }} href="https://github.com/anujrajincludemyself" target="_blank" rel="noreferrer">GitHub</motion.a>
+                      <motion.a whileHover={{ scale: 1.05 }} href="https://khilao-com.vercel.app" target="_blank" rel="noreferrer">Live</motion.a>
+                    </p>
+                  </div>
+                  <ul>
+                    <li>Built a full-stack recipe platform (React 19, Vite, Node.js, Express, MongoDB) with JWT auth, Cloudinary CDN image uploads, and community recipe browsing; deployed on Vercel and Render.</li>
+                    <li>Integrated AI for on-demand recipe generation with private per-user history; optimized bundle by 48% via code splitting and cut DB query time by 30-50% via indexing.</li>
+                  </ul>
+                </motion.article>
+
+                <motion.article className="resume-item" {...itemHoverProps}>
+                  <div className="item-heading project-heading">
                     <h3>TruthLens - Chrome Extension</h3>
                     <p>
                       <motion.a whileHover={{ scale: 1.05 }} href="https://github.com/anujrajincludemyself/fake-news-detection" target="_blank" rel="noreferrer">GitHub</motion.a>
                     </p>
                   </div>
                   <ul>
-                    <li>Shipped a Chrome extension that detects misinformation, bias, and clickbait in real-time with multi-provider AI fallback and inline content highlighting.</li>
+                    <li>Shipped a Chrome extension detecting misinformation, bias, and clickbait in real-time with multi-provider AI fallback and inline content highlighting for seamless in-browser fact-checking.</li>
                   </ul>
                 </motion.article>
               </motion.section>
@@ -336,7 +350,7 @@ function App() {
                 whileInView="visible"
                 initial="hidden"
               >
-                <h2>Additional</h2>
+                <h2>Professional Development</h2>
                 <motion.article className="resume-item compact-item" {...itemHoverProps}>
                   <ul>
                     <li>Completed Android and Kotlin Development Masterclass (Udemy) and built production-ready Android applications.</li>
