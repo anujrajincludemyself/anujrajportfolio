@@ -1,160 +1,96 @@
+import React from 'react';
 import { motion } from 'framer-motion';
-import { FaBriefcase, FaCalendar, FaTrophy, FaMedal } from 'react-icons/fa';
-import './Experience.css';
+import { Briefcase } from 'lucide-react';
+
+const experiences = [
+  {
+    role: "Software Development Engineer (SDE) Intern",
+    company: "MediHut",
+    duration: "Jan 2026 – April 2026",
+    color: "bg-accent-blue",
+    points: [
+      "Engineered a cross-platform Rider Delivery App (React Native, Node.js, Prisma, PostgreSQL, Redis) with live dispatch and GPS tracking; cut dispatch latency by ~35% via Redis caching and row-level mutex locking.",
+      "Built Pharmacy Console CRM serving 2+ live pharmacies — real-time inventory, order intake, and prescription workflows; achieved 50% performance gain by trimming API response payloads from ~120KB to under 30KB.",
+      "Shipped responsive pharmacy website (React.js, TypeScript) with 40% load improvement; built full Admin Panel for riders, orders, and inventory."
+    ]
+  },
+  {
+    role: "Full Stack Developer Intern",
+    company: "Jesty CRM",
+    duration: "Dec 2025 – Jan 2026",
+    color: "bg-accent-orange",
+    points: [
+      "Developed React.js components with REST APIs; optimised Node.js/MongoDB backend for a SaaS CRM platform.",
+      "Accelerated lead-management workflows by 25% via query optimisation and improved rendering performance."
+    ]
+  },
+  {
+    role: "Research Intern",
+    company: "IIT Patna",
+    duration: "Jun 2025 – Jul 2025",
+    color: "bg-accent-green",
+    points: [
+      "Built a multi-constraint exam seating allocator (Python, Streamlit) handling sparse/dense fill modes, per-room buffer capacity, and building-adjacency optimisation.",
+      "Engineered automated clash detection via roll-number set intersections across slots; produced structured Excel outputs with full try/catch recovery."
+    ]
+  }
+];
 
 const Experience = () => {
-    const experiences = [
-        {
-            role: 'SDE Intern',
-            company: 'MediHut',
-            period: 'Present',
-            current: true,
-            highlights: [
-                'Built frontend from using Next.js 14, TypeScript, Tailwind CSS and Reactjs',
-                'Developing backend services and APIs using NestJS'
-            ],
-            color: '#10b981'
-        },
-        {
-            role: 'Full Stack Developer Intern',
-            company: 'Bucket List',
-            period: 'Present',
-            highlights: [
-                'Built the complete frontend from scratch using Next.js 14, TypeScript, and Tailwind CSS',
-                'Implemented responsive layouts, Currently developing backend services using NestJS'
-            ],
-            color: '#6366f1'
-        },
-        {
-            role: 'Full Stack Developer Intern',
-            company: 'Maximize Media',
-            period: 'Jan 2026',
-            highlights: [
-                'Working on a SaaS CRM platform built with React, Node.js, and REST APIs',
-                'Mainly making frontend and improving Backend APIs and features of Leads'
-            ],
-            color: '#8b5cf6'
-        },
-        {
-            role: 'Research Intern',
-            company: 'IIT Patna',
-            period: 'Jun 2025 -- Jul 2025',
-            highlights: [
-                'Conducted ML-based analysis for network security',
-                'Built an exam seating system using Python and Streamlit (95% accuracy)'
-            ],
-            color: '#ec4899'
-        }
-    ];
+  return (
+    <section id="experience" className="py-24 px-4 md:px-8 max-w-6xl mx-auto">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-100px" }}
+        className="mb-16"
+      >
+        <h2 className="text-4xl md:text-5xl font-heading font-bold mb-4">
+          Professional <span className="text-accent-blue">Experience</span>
+        </h2>
+        <div className="h-1 w-20 bg-accent-blue rounded-full"></div>
+      </motion.div>
 
-    const achievements = [
-        {
-            title: 'Amazon ML Challenge 2025',
-            organization: 'Amazon India',
-            period: 'Jun–Jul / Oct 2025',
-            achievement: 'Achieved 79% accuracy; ranked 82 nationally'
-        },
-        {
-            title: 'HackCrux 2025',
-            organization: 'GDG, LNMIT Jaipur',
-            period: '2025',
-            achievement: 'Secured 2nd Runner-Up for AI-powered Digital Twin solution'
-        }
-    ];
-
-    return (
-        <section className="experience-section section" id="experience">
-            <div className="container">
-                {/* Internships */}
-                <motion.div
-                    initial={{ opacity: 0, y: 50 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8 }}
-                    viewport={{ once: true }}
-                >
-                    <h2 className="section-title">Professional Journey</h2>
-                    <p className="section-subtitle">
-                        Gaining hands-on experience across diverse tech domains
-                    </p>
-                </motion.div>
-
-                <div className="timeline">
-                    {experiences.map((exp, index) => (
-                        <motion.div
-                            key={index}
-                            className="timeline-item"
-                            initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            transition={{ duration: 0.6, delay: index * 0.2 }}
-                            viewport={{ once: true }}
-                        >
-                            <div className="timeline-marker" style={{ background: exp.color }}>
-                                <FaBriefcase />
-                            </div>
-
-                            <div className="timeline-content card">
-                                {exp.current && (
-                                    <div className="current-badge">
-                                        <span className="pulse"></span>
-                                        Currently Working
-                                    </div>
-                                )}
-
-                                <div className="timeline-header">
-                                    <h3 className="role-title">{exp.role}</h3>
-                                    <div className="company-period">
-                                        <span className="company">{exp.company}</span>
-                                        <span className="period">
-                                            <FaCalendar /> {exp.period}
-                                        </span>
-                                    </div>
-                                </div>
-
-                                <ul className="highlights-list">
-                                    {exp.highlights.map((highlight, i) => (
-                                        <li key={i}>{highlight}</li>
-                                    ))}
-                                </ul>
-                            </div>
-                        </motion.div>
-                    ))}
-                </div>
-
-                {/* Hackathons & Achievements */}
-                <motion.div
-                    className="achievements-section"
-                    initial={{ opacity: 0, y: 50 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8 }}
-                    viewport={{ once: true }}
-                >
-                    <h3 className="subsection-title gradient-text">Hackathons & Competitions</h3>
-
-                    <div className="achievements-grid">
-                        {achievements.map((achievement, index) => (
-                            <motion.div
-                                key={index}
-                                className="achievement-card card"
-                                initial={{ opacity: 0, scale: 0.9 }}
-                                whileInView={{ opacity: 1, scale: 1 }}
-                                transition={{ duration: 0.5, delay: index * 0.2 }}
-                                viewport={{ once: true }}
-                                whileHover={{ scale: 1.05 }}
-                            >
-                                <div className="achievement-icon">
-                                    {index === 0 ? <FaTrophy style={{ color: '#facc15', fontSize: '1.5rem' }} /> : <FaMedal style={{ color: '#60a5fa', fontSize: '1.5rem' }} />}
-                                </div>
-                                <h4 className="achievement-title">{achievement.title}</h4>
-                                <p className="achievement-org">{achievement.organization}</p>
-                                <p className="achievement-period">{achievement.period}</p>
-                                <p className="achievement-text">{achievement.achievement}</p>
-                            </motion.div>
-                        ))}
-                    </div>
-                </motion.div>
+      <div className="space-y-12 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-white/10 before:to-transparent">
+        {experiences.map((exp, index) => (
+          <motion.div 
+            key={index}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.5, delay: index * 0.1 }}
+            className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active"
+          >
+            {/* Icon */}
+            <div className={`flex items-center justify-center w-10 h-10 rounded-full border-4 border-background shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 shadow absolute left-0 md:left-1/2 md:-translate-x-1/2 ${exp.color}`}>
+              <Briefcase className="w-4 h-4 text-white" />
             </div>
-        </section>
-    );
+
+            {/* Card */}
+            <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] ml-auto md:ml-0 glass-panel p-6 rounded-2xl hover:bg-white/10 transition-colors duration-300">
+              <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-4 gap-2">
+                <div>
+                  <h3 className="text-xl font-bold font-heading">{exp.role}</h3>
+                  <p className="text-white/60 font-medium">{exp.company}</p>
+                </div>
+                <span className="text-sm px-3 py-1 bg-white/5 rounded-full text-white/80 whitespace-nowrap">
+                  {exp.duration}
+                </span>
+              </div>
+              <ul className="space-y-3">
+                {exp.points.map((point, i) => (
+                  <li key={i} className="text-sm text-text/70 flex gap-3">
+                    <span className={`w-1.5 h-1.5 rounded-full mt-1.5 shrink-0 ${exp.color}`}></span>
+                    {point}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </motion.div>
+        ))}
+      </div>
+    </section>
+  );
 };
 
 export default Experience;

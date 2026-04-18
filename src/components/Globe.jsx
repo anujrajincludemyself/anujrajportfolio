@@ -74,10 +74,10 @@ const GlobeComponent = () => {
                     transition={{ duration: 0.8 }}
                     viewport={{ once: true }}
                 >
-                    <h2 className="section-title">Journey Across India</h2>
-                    <p className="globe-description">
+                    <h2 className="section-title"></h2>
+                    {/* <p className="globe-description">
                         Walking With This Journey
-                    </p>
+                    </p> */}
                 </motion.div>
 
                 <motion.div
