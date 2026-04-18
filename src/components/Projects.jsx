@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
 import { ExternalLink, Github } from 'lucide-react';
 
 const projects = [
@@ -39,9 +39,92 @@ const projects = [
   }
 ];
 
+const ProjectCard = ({ project, index }) => {
+  const x = useMotionValue(0);
+  const y = useMotionValue(0);
+  
+  const mouseXSpring = useSpring(x, { stiffness: 300, damping: 30 });
+  const mouseYSpring = useSpring(y, { stiffness: 300, damping: 30 });
+
+  const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], ["10deg", "-10deg"]);
+  const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ["-10deg", "10deg"]);
+
+  const handleMouseMove = (e) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    const width = rect.width;
+    const height = rect.height;
+    const mouseX = e.clientX - rect.left;
+    const mouseY = e.clientY - rect.top;
+    const xPct = mouseX / width - 0.5;
+    const yPct = mouseY / height - 0.5;
+    x.set(xPct);
+    y.set(yPct);
+  };
+
+  const handleMouseLeave = () => {
+    x.set(0);
+    y.set(0);
+  };
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-100px" }}
+      transition={{ duration: 0.5, delay: index * 0.1 }}
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+      style={{
+        rotateX,
+        rotateY,
+        transformStyle: "preserve-3d",
+      }}
+      className={`group relative glass-panel p-8 rounded-3xl border border-white/5 transition-colors duration-500 hover:border-white/20 ${project.color} overflow-hidden`}
+    >
+      <div 
+        style={{ transform: "translateZ(50px)" }}
+        className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
+      ></div>
+      
+      <div className="relative z-10 flex flex-col h-full" style={{ transform: "translateZ(30px)" }}>
+        <div className="flex justify-between items-start mb-6">
+          <div>
+            <h3 className="text-2xl font-bold font-heading mb-2">{project.title}</h3>
+            <p className="text-white/60 text-sm font-medium">{project.subtitle}</p>
+          </div>
+          <div className="flex gap-3">
+            {project.github && (
+              <a href={project.github} target="_blank" rel="noreferrer" className="text-white/40 hover:text-white transition-colors">
+                <Github className="w-6 h-6" />
+              </a>
+            )}
+            {project.live && (
+              <a href={project.live} target="_blank" rel="noreferrer" className="text-white/40 hover:text-white transition-colors">
+                <ExternalLink className="w-6 h-6" />
+              </a>
+            )}
+          </div>
+        </div>
+        
+        <p className="text-text/70 mb-8 flex-grow leading-relaxed">
+          {project.description}
+        </p>
+
+        <div className="flex flex-wrap gap-2 mt-auto">
+          {project.tech.map((t, i) => (
+            <span key={i} className="px-3 py-1 bg-white/5 rounded-full text-xs font-medium text-white/80 border border-white/10">
+              {t}
+            </span>
+          ))}
+        </div>
+      </div>
+    </motion.div>
+  );
+};
+
 const Projects = () => {
   return (
-    <section id="projects" className="py-24 px-4 md:px-8 max-w-7xl mx-auto">
+    <section id="projects" className="py-24 px-4 md:px-8 max-w-7xl mx-auto" style={{ perspective: "1000px" }}>
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -56,50 +139,7 @@ const Projects = () => {
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {projects.map((project, index) => (
-          <motion.div
-            key={index}
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.5, delay: index * 0.1 }}
-            className={`group relative glass-panel p-8 rounded-3xl border border-white/5 transition-all duration-500 hover:-translate-y-2 ${project.color} overflow-hidden`}
-          >
-            {/* Glow effect on hover */}
-            <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
-            
-            <div className="relative z-10 flex flex-col h-full">
-              <div className="flex justify-between items-start mb-6">
-                <div>
-                  <h3 className="text-2xl font-bold font-heading mb-2">{project.title}</h3>
-                  <p className="text-white/60 text-sm font-medium">{project.subtitle}</p>
-                </div>
-                <div className="flex gap-3">
-                  {project.github && (
-                    <a href={project.github} target="_blank" rel="noreferrer" className="text-white/40 hover:text-white transition-colors">
-                      <Github className="w-6 h-6" />
-                    </a>
-                  )}
-                  {project.live && (
-                    <a href={project.live} target="_blank" rel="noreferrer" className="text-white/40 hover:text-white transition-colors">
-                      <ExternalLink className="w-6 h-6" />
-                    </a>
-                  )}
-                </div>
-              </div>
-              
-              <p className="text-text/70 mb-8 flex-grow leading-relaxed">
-                {project.description}
-              </p>
-
-              <div className="flex flex-wrap gap-2 mt-auto">
-                {project.tech.map((t, i) => (
-                  <span key={i} className="px-3 py-1 bg-white/5 rounded-full text-xs font-medium text-white/80 border border-white/10">
-                    {t}
-                  </span>
-                ))}
-              </div>
-            </div>
-          </motion.div>
+          <ProjectCard key={index} project={project} index={index} />
         ))}
       </div>
     </section>
