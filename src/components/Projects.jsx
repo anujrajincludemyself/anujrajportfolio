@@ -1,120 +1,109 @@
+import React from 'react';
 import { motion } from 'framer-motion';
-import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
-import './Projects.css';
-import goFoodImg from '../assets/gofood.png';
-import npclImg from '../assets/npcl.png';
-import khilaoImg from '../assets/khilao.png';
+import { ExternalLink, Github } from 'lucide-react';
+
+const projects = [
+  {
+    title: "TASDEEQ",
+    subtitle: "AI Fake News Detection",
+    description: "Full-stack AI platform detecting fake news in text and video using FastAPI, Express, TF-IDF vectorisation, and video forensics ML models. Ranked Top 15/100+.",
+    tech: ["FastAPI", "Express", "React", "ML", "JWT"],
+    github: "https://github.com/anujrajincludemyself/fake-news-detection",
+    live: "https://fake-news-detection-seven-delta.vercel.app/",
+    color: "group-hover:border-accent-blue"
+  },
+  {
+    title: "Bihavo Foods",
+    subtitle: "Full-Stack E-commerce",
+    description: "Production-ready food commerce platform with customer and admin portals. Built secure APIs with JWT auth, Google OAuth, and real-time order tracking via Socket.IO.",
+    tech: ["Next.js", "React", "Node.js", "MongoDB", "Socket.IO"],
+    live: "https://bihavo.vercel.app/",
+    color: "group-hover:border-accent-orange"
+  },
+  {
+    title: "Khilao",
+    subtitle: "AI Recipe Sharing Platform",
+    description: "Built a full-stack recipe platform with AI for on-demand recipe generation. Optimised bundle by 48% and cut DB query time by 30-50% via indexing.",
+    tech: ["React 19", "Vite", "Node.js", "Express", "AI"],
+    github: "https://github.com/anujrajincludemyself",
+    live: "https://khilao-com.vercel.app",
+    color: "group-hover:border-accent-green"
+  },
+  {
+    title: "TruthLens",
+    subtitle: "Chrome Extension",
+    description: "Shipped a Chrome extension detecting misinformation, bias, and clickbait in real-time with multi-provider AI fallback and inline content highlighting.",
+    tech: ["JavaScript", "Chrome API", "AI Fallback"],
+    github: "https://github.com/anujrajincludemyself/fake-news-detection",
+    color: "group-hover:border-accent-red"
+  }
+];
 
 const Projects = () => {
-    const projects = [
-        {
-            title: 'GoFood — Online Food Delivery Platform',
-            description: 'A full-stack food delivery e-commerce application built using the MERN stack.',
-            image: goFoodImg,
-            tech: ['MongoDB', 'Express.js', 'React.js', 'Node.js', 'Redux Toolkit', 'JWT', 'Payment Gateway'],
-            highlights: [
-                'Implemented secure JWT-based authentication and protected user sessions',
-                'Built cart, order management, and online payment flow with real-time order tracking'
-            ],
-            github: 'https://github.com/anujrajincludemyself/GoFood',
-        },
-        {
-            title: 'NPCL — Civil Road Construction Company Website',
-            description: 'Production-ready business website built and deployed for a civil road construction company.',
-            image: npclImg,
-            tech: ['Next.js 14', 'TypeScript', 'Tailwind CSS'],
-            highlights: [
-                'Responsive, SEO-optimized UI using App Router and modular components'
-            ],
-            github: 'https://github.com/anujrajincludemyself/NPCL',
-            live: 'https://ncplorg.com',
-        },
-        {
-            title: 'Khilao.com — Food Recipe Platform',
-            description: 'Built a MERN-based platform for creating, managing, and discovering food recipes.',
-            image: khilaoImg,
-            tech: ['MongoDB', 'Express.js', 'React.js', 'Node.js', 'JWT', 'Multer'],
-            highlights: [
-                'Implemented JWT-based authentication and role-based access control'
-            ],
-            github: 'https://github.com/anujrajincludemyself/-Khilao.com',
-        }
-    ];
+  return (
+    <section id="projects" className="py-24 px-4 md:px-8 max-w-7xl mx-auto">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-100px" }}
+        className="mb-16"
+      >
+        <h2 className="text-4xl md:text-5xl font-heading font-bold mb-4">
+          Featured <span className="text-accent-orange">Projects</span>
+        </h2>
+        <div className="h-1 w-20 bg-accent-orange rounded-full"></div>
+      </motion.div>
 
-    return (
-        <section className="projects-section section" id="projects">
-            <div className="container">
-                <motion.div
-                    initial={{ opacity: 0, y: 50 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8 }}
-                    viewport={{ once: true }}
-                >
-                    <h2 className="section-title">Featured Projects</h2>
-                    <p className="section-subtitle">
-                        Building solutions that make a difference
-                    </p>
-                </motion.div>
-
-                <div className="projects-grid">
-                    {projects.map((project, index) => (
-                        <motion.div
-                            key={index}
-                            className="project-card card"
-                            initial={{ opacity: 0, y: 50 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.6, delay: index * 0.2 }}
-                            viewport={{ once: true }}
-                            whileHover={{ y: -10 }}
-                        >
-                            <div className="project-header">
-                                <img src={project.image} alt={project.title} className="project-image" />
-                                <div className="project-number">0{index + 1}</div>
-                            </div>
-
-                            <div className="project-content">
-                                <h3 className="project-title">{project.title}</h3>
-                                <p className="project-description">{project.description}</p>
-
-                                <div className="project-tech">
-                                    {project.tech.map((tech, i) => (
-                                        <span key={i} className="tech-tag">{tech}</span>
-                                    ))}
-                                </div>
-
-                                <ul className="project-highlights">
-                                    {project.highlights.map((highlight, i) => (
-                                        <li key={i}>{highlight}</li>
-                                    ))}
-                                </ul>
-
-                                <div className="project-links">
-                                    <a
-                                        href={project.github}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="project-link"
-                                    >
-                                        <FaGithub /> GitHub
-                                    </a>
-                                    {project.live && (
-                                        <a
-                                            href={project.live}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="project-link"
-                                        >
-                                            <FaExternalLinkAlt /> Live Demo
-                                        </a>
-                                    )}
-                                </div>
-                            </div>
-                        </motion.div>
-                    ))}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {projects.map((project, index) => (
+          <motion.div
+            key={index}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.5, delay: index * 0.1 }}
+            className={`group relative glass-panel p-8 rounded-3xl border border-white/5 transition-all duration-500 hover:-translate-y-2 ${project.color} overflow-hidden`}
+          >
+            {/* Glow effect on hover */}
+            <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+            
+            <div className="relative z-10 flex flex-col h-full">
+              <div className="flex justify-between items-start mb-6">
+                <div>
+                  <h3 className="text-2xl font-bold font-heading mb-2">{project.title}</h3>
+                  <p className="text-white/60 text-sm font-medium">{project.subtitle}</p>
                 </div>
+                <div className="flex gap-3">
+                  {project.github && (
+                    <a href={project.github} target="_blank" rel="noreferrer" className="text-white/40 hover:text-white transition-colors">
+                      <Github className="w-6 h-6" />
+                    </a>
+                  )}
+                  {project.live && (
+                    <a href={project.live} target="_blank" rel="noreferrer" className="text-white/40 hover:text-white transition-colors">
+                      <ExternalLink className="w-6 h-6" />
+                    </a>
+                  )}
+                </div>
+              </div>
+              
+              <p className="text-text/70 mb-8 flex-grow leading-relaxed">
+                {project.description}
+              </p>
+
+              <div className="flex flex-wrap gap-2 mt-auto">
+                {project.tech.map((t, i) => (
+                  <span key={i} className="px-3 py-1 bg-white/5 rounded-full text-xs font-medium text-white/80 border border-white/10">
+                    {t}
+                  </span>
+                ))}
+              </div>
             </div>
-        </section>
-    );
+          </motion.div>
+        ))}
+      </div>
+    </section>
+  );
 };
 
 export default Projects;
