@@ -35,15 +35,3 @@
 ::-webkit-scrollbar-thumb:hover {
   background: #3F3F46;
 }
-
-/* Hide default cursor to use custom tracker (optional, but good for premium feel) */
-@media (pointer: fine) {
-  body.custom-cursor {
-    cursor: none;
-  }
-
-  body.custom-cursor a,
-  body.custom-cursor button {
-    cursor: none;
-  }
-}

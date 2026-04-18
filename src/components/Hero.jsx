@@ -47,11 +47,22 @@ const Hero = () => {
           </motion.div>
 
           <motion.h1 
-            variants={itemVariants}
-            className="text-6xl md:text-8xl font-heading font-bold mb-6 tracking-tight"
+            className="text-6xl md:text-8xl font-heading font-bold mb-6 tracking-tight flex flex-col"
           >
-            Hi, I'm <br />
-            <span className="text-gradient">Anuj Raj.</span>
+            <motion.span variants={itemVariants}>Hi, I'm </motion.span>
+            <span className="text-gradient flex overflow-hidden py-2" style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)" }}>
+              {"Anuj Raj.".split('').map((char, index) => (
+                <motion.span
+                  key={index}
+                  initial={{ opacity: 0, y: 100 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.5 + index * 0.08, type: "spring", stiffness: 100 }}
+                  className={char === ' ' ? 'w-4 md:w-8' : 'inline-block'}
+                >
+                  {char}
+                </motion.span>
+              ))}
+            </span>
           </motion.h1>
 
           <motion.p 
@@ -94,7 +105,7 @@ const Hero = () => {
           {/* Decorative background behind image */}
           <div className="absolute inset-0 bg-gradient-to-tr from-accent-blue to-accent-green rounded-3xl blur-2xl opacity-20 animate-pulse"></div>
           
-          <div className="relative glass-panel p-2 rounded-3xl border border-white/10 overflow-hidden transform hover:-rotate-1 hover:scale-[1.02] transition-all duration-500 w-full max-w-[300px]">
+          <div className="relative glass-panel p-2 rounded-3xl border border-white/10 overflow-hidden animate-float w-full max-w-[300px]">
             <img 
               src="/profile.jpg" 
               alt="Anuj Raj" 
@@ -106,6 +117,23 @@ const Hero = () => {
           </div>
         </motion.div>
       </div>
+
+      {/* Scroll indicator */}
+      <motion.div
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 2, duration: 1 }}
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
+      >
+        <span className="text-xs text-text/40 tracking-widest uppercase">Scroll</span>
+        <motion.div
+          animate={{ y: [0, 8, 0] }}
+          transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
+          className="w-5 h-8 border border-white/20 rounded-full flex items-start justify-center p-1"
+        >
+          <div className="w-1 h-2 bg-white/60 rounded-full" />
+        </motion.div>
+      </motion.div>
     </section>
   );
 };
