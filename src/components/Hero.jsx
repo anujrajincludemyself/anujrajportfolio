@@ -2,7 +2,6 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Github, Linkedin, Mail, ArrowRight, ArrowDown, Trophy } from 'lucide-react';
 
-// Inline SVG icons for tech stacks (coloured)
 const techStack = [
   {
     name: 'C# / .NET',
@@ -18,7 +17,7 @@ const techStack = [
     color: '#61DAFB',
     icon: (
       <svg viewBox="0 0 24 24" className="w-5 h-5" fill="currentColor">
-        <path d="M14.23 12.004a2.236 2.236 0 0 1-2.235 2.236 2.236 2.236 0 0 1-2.236-2.236 2.236 2.236 0 0 1 2.235-2.236 2.236 2.236 0 0 1 2.236 2.236zm2.648-10.69c-1.346 0-3.107.96-4.888 2.622-1.78-1.653-3.542-2.602-4.887-2.602-.41 0-.783.093-1.106.278-1.375.793-1.683 3.264-.973 6.365C1.98 8.917 0 10.42 0 12.004c0 1.59 1.99 3.097 5.043 4.03-.704 3.113-.39 5.588.988 6.38.32.187.69.275 1.102.275 1.345 0 3.107-.96 4.888-2.624 1.78 1.654 3.542 2.603 4.887 2.603.41 0 .783-.09 1.106-.275 1.374-.792 1.683-3.263.973-6.365C22.02 15.096 24 13.59 24 12.004c0-1.59-1.99-3.097-5.043-4.032.704-3.11.39-5.587-.988-6.38-.318-.184-.688-.277-1.092-.278zm-.005 1.09v.006c.225 0 .406.044.558.127.666.382.955 1.835.73 3.704-.054.46-.142.945-.25 1.44-.96-.236-2.006-.417-3.107-.534-.66-.905-1.345-1.727-2.035-2.447 1.592-1.48 3.087-2.292 4.105-2.295zm-9.77.02c1.012 0 2.514.808 4.11 2.28-.686.72-1.37 1.537-2.02 2.442-1.107.117-2.154.298-3.113.538-.112-.49-.195-.964-.254-1.42-.23-1.868.054-3.32.714-3.707.19-.09.4-.127.563-.132zm4.882 3.05c.455.468.91.992 1.36 1.564-.44-.02-.89-.034-1.345-.034-.46 0-.915.01-1.36.034.44-.572.895-1.096 1.345-1.565zM12 8.1c.74 0 1.477.034 2.202.093.406.582.802 1.203 1.183 1.86.372.64.71 1.29 1.018 1.946-.308.655-.646 1.31-1.013 1.95-.38.66-.773 1.288-1.18 1.87-.728.063-1.466.098-2.21.098-.74 0-1.477-.035-2.202-.093-.406-.582-.802-1.204-1.183-1.86-.372-.64-.71-1.29-1.018-1.946.303-.657.646-1.313 1.013-1.954.38-.66.773-1.286 1.18-1.868.728-.064 1.466-.098 2.21-.098zm-3.635.254c-.24.377-.48.763-.704 1.16-.225.39-.435.782-.635 1.174-.265-.656-.49-1.31-.676-1.947.64-.15 1.315-.283 2.015-.386zm7.26 0c.695.103 1.365.23 2.006.387-.18.632-.405 1.282-.66 1.933-.2-.39-.41-.783-.64-1.174-.225-.392-.465-.774-.705-1.146zm3.063.675c.484.15.944.317 1.375.498 1.732.74 2.852 1.708 2.852 2.476-.005.768-1.125 1.74-2.857 2.475-.42.18-.88.342-1.355.493-.28-.958-.646-1.956-1.1-2.98.45-1.017.81-2.01 1.085-2.964zm-13.395.004c.278.96.645 1.957 1.1 2.98-.45 1.017-.812 2.01-1.086 2.964-.484-.15-.944-.318-1.37-.5-1.732-.737-2.852-1.706-2.852-2.474 0-.768 1.12-1.742 2.852-2.476.42-.18.88-.342 1.356-.494zm11.678 4.28c.265.657.49 1.312.676 1.948-.64.157-1.316.29-2.016.39.24-.375.48-.762.705-1.158.225-.39.435-.788.636-1.18zm-9.945.02c.2.392.41.783.64 1.175.23.39.465.772.705 1.143-.695-.102-1.365-.23-2.006-.386.18-.63.406-1.282.66-1.933zM17.92 16.32c.112.493.2.968.254 1.423.23 1.868-.054 3.32-.714 3.708-.147.09-.338.128-.563.128-1.012 0-2.514-.807-4.11-2.28.686-.72 1.37-1.536 2.02-2.44 1.107-.118 2.154-.3 3.113-.54zm-11.83.01c.96.234 2.006.415 3.107.532.66.905 1.345 1.727 2.035 2.446-1.595 1.483-3.092 2.295-4.11 2.295-.22-.005-.406-.05-.553-.132-.666-.38-.955-1.834-.73-3.703.054-.46.142-.944.25-1.438zm4.56.64c.44.02.89.034 1.345.034.46 0 .915-.01 1.36-.034-.44.572-.895 1.095-1.345 1.565-.455-.47-.91-.993-1.36-1.565z"/>
+        <path d="M14.23 12.004a2.236 2.236 0 0 1-2.235 2.236 2.236 2.236 0 0 1-2.236-2.236 2.236 2.236 0 0 1 2.235-2.236 2.236 2.236 0 0 1 2.236 2.236zm2.648-10.69c-1.346 0-3.107.96-4.888 2.622-1.78-1.653-3.542-2.602-4.887-2.602-.41 0-.783.093-1.106.278-1.375.793-1.683 3.264-.973 6.365C1.98 8.917 0 10.42 0 12.004c0 1.59 1.99 3.097 5.043 4.03-.704 3.113-.39 5.588.988 6.38.32.187.69.275 1.102.275 1.345 0 3.107-.96 4.888-2.624 1.78 1.654 3.542 2.603 4.887 2.603.41 0 .783-.09 1.106-.275 1.374-.792 1.683-3.263.973-6.365C22.02 15.096 24 13.59 24 12.004c0-1.59-1.99-3.097-5.043-4.032.704-3.11.39-5.587-.988-6.38-.318-.184-.688-.277-1.092-.278zm-.005 1.09c.225 0 .406.044.558.127.666.382.955 1.835.73 3.704-.054.46-.142.945-.25 1.44-.96-.236-2.006-.417-3.107-.534-.66-.905-1.345-1.727-2.035-2.447 1.592-1.48 3.087-2.292 4.105-2.295zm-9.77.02c1.012 0 2.514.808 4.11 2.28-.686.72-1.37 1.537-2.02 2.442-1.107.117-2.154.298-3.113.538-.112-.49-.195-.964-.254-1.42-.23-1.868.054-3.32.714-3.707.19-.09.4-.127.563-.132zm4.882 3.05c.455.468.91.992 1.36 1.564-.44-.02-.89-.034-1.345-.034-.46 0-.915.01-1.36.034.44-.572.895-1.096 1.345-1.565zM12 8.1c.74 0 1.477.034 2.202.093.406.582.802 1.203 1.183 1.86.372.64.71 1.29 1.018 1.946-.308.655-.646 1.31-1.013 1.95-.38.66-.773 1.288-1.18 1.87-.728.063-1.466.098-2.21.098-.74 0-1.477-.035-2.202-.093-.406-.582-.802-1.204-1.183-1.86-.372-.64-.71-1.29-1.018-1.946.303-.657.646-1.313 1.013-1.954.38-.66.773-1.286 1.18-1.868.728-.064 1.466-.098 2.21-.098zm-3.635.254c-.24.377-.48.763-.704 1.16-.225.39-.435.782-.635 1.174-.265-.656-.49-1.31-.676-1.947.64-.15 1.315-.283 2.015-.386zm7.26 0c.695.103 1.365.23 2.006.387-.18.632-.405 1.282-.66 1.933-.2-.39-.41-.783-.64-1.174-.225-.392-.465-.774-.705-1.146zm3.063.675c.484.15.944.317 1.375.498 1.732.74 2.852 1.708 2.852 2.476-.005.768-1.125 1.74-2.857 2.475-.42.18-.88.342-1.355.493-.28-.958-.646-1.956-1.1-2.98.45-1.017.81-2.01 1.085-2.964zm-13.395.004c.278.96.645 1.957 1.1 2.98-.45 1.017-.812 2.01-1.086 2.964-.484-.15-.944-.318-1.37-.5-1.732-.737-2.852-1.706-2.852-2.474 0-.768 1.12-1.742 2.852-2.476.42-.18.88-.342 1.356-.494zm11.678 4.28c.265.657.49 1.312.676 1.948-.64.157-1.316.29-2.016.39.24-.375.48-.762.705-1.158.225-.39.435-.788.636-1.18zm-9.945.02c.2.392.41.783.64 1.175.23.39.465.772.705 1.143-.695-.102-1.365-.23-2.006-.386.18-.63.406-1.282.66-1.933zM17.92 16.32c.112.493.2.968.254 1.423.23 1.868-.054 3.32-.714 3.708-.147.09-.338.128-.563.128-1.012 0-2.514-.807-4.11-2.28.686-.72 1.37-1.536 2.02-2.44 1.107-.118 2.154-.3 3.113-.54zm-11.83.01c.96.234 2.006.415 3.107.532.66.905 1.345 1.727 2.035 2.446-1.595 1.483-3.092 2.295-4.11 2.295-.22-.005-.406-.05-.553-.132-.666-.38-.955-1.834-.73-3.703.054-.46.142-.944.25-1.438zm4.56.64c.44.02.89.034 1.345.034.46 0 .915-.01 1.36-.034-.44.572-.895 1.095-1.345 1.565-.455-.47-.91-.993-1.36-1.565z"/>
       </svg>
     ),
   },
@@ -41,15 +40,6 @@ const techStack = [
     ),
   },
   {
-    name: 'TypeScript',
-    color: '#3178C6',
-    icon: (
-      <svg viewBox="0 0 24 24" className="w-5 h-5" fill="currentColor">
-        <path d="M1.125 0C.502 0 0 .502 0 1.125v21.75C0 23.498.502 24 1.125 24h21.75c.623 0 1.125-.502 1.125-1.125V1.125C24 .502 23.498 0 22.875 0zm17.363 9.75c.612 0 1.154.037 1.627.111a6.38 6.38 0 0 1 1.306.34v2.458a3.95 3.95 0 0 0-.643-.361 5.093 5.093 0 0 0-.717-.26 5.453 5.453 0 0 0-1.426-.2c-.3 0-.573.028-.819.086a2.1 2.1 0 0 0-.623.242c-.17.104-.3.229-.393.374a.888.888 0 0 0-.14.49c0 .196.053.373.156.529.104.156.252.304.443.444s.423.276.696.41c.273.135.582.274.926.416.47.197.892.407 1.266.628.374.222.695.473.963.753.268.279.472.598.614.957.142.359.214.776.214 1.253 0 .657-.125 1.21-.373 1.656a3.033 3.033 0 0 1-1.012 1.085 4.38 4.38 0 0 1-1.487.596c-.566.12-1.163.18-1.79.18a9.916 9.916 0 0 1-1.84-.164 5.544 5.544 0 0 1-1.512-.493v-2.63a5.033 5.033 0 0 0 3.237 1.2c.333 0 .624-.03.872-.09.249-.06.456-.144.623-.25.166-.108.29-.234.373-.38a1.023 1.023 0 0 0-.074-1.089 2.12 2.12 0 0 0-.537-.5 5.597 5.597 0 0 0-.807-.444 27.72 27.72 0 0 0-1.007-.436c-.918-.383-1.602-.852-2.053-1.405-.45-.553-.676-1.222-.676-2.005 0-.614.123-1.141.369-1.582.246-.441.58-.804 1.004-1.089a4.494 4.494 0 0 1 1.47-.629 7.536 7.536 0 0 1 1.77-.201zm-15.113.188h9.563v2.166H9.506v9.646H6.789v-9.646H3.375z"/>
-      </svg>
-    ),
-  },
-  {
     name: 'PyTorch',
     color: '#EE4C2C',
     icon: (
@@ -58,186 +48,264 @@ const techStack = [
       </svg>
     ),
   },
+  {
+    name: 'TypeScript',
+    color: '#3178C6',
+    icon: (
+      <svg viewBox="0 0 24 24" className="w-5 h-5" fill="currentColor">
+        <path d="M1.125 0C.502 0 0 .502 0 1.125v21.75C0 23.498.502 24 1.125 24h21.75c.623 0 1.125-.502 1.125-1.125V1.125C24 .502 23.498 0 22.875 0zm17.363 9.75c.612 0 1.154.037 1.627.111a6.38 6.38 0 0 1 1.306.34v2.458a3.95 3.95 0 0 0-.643-.361 5.093 5.093 0 0 0-.717-.26 5.453 5.453 0 0 0-1.426-.2c-.3 0-.573.028-.819.086a2.1 2.1 0 0 0-.623.242c-.17.104-.3.229-.393.374a.888.888 0 0 0-.14.49c0 .196.053.373.156.529.104.156.252.304.443.444s.423.276.696.41c.273.135.582.274.926.416.47.197.892.407 1.266.628.374.222.695.473.963.753.268.279.472.598.614.957.142.359.214.776.214 1.253 0 .657-.125 1.21-.373 1.656a3.033 3.033 0 0 1-1.012 1.085 4.38 4.38 0 0 1-1.487.596c-.566.12-1.163.18-1.79.18a9.916 9.916 0 0 1-1.84-.164 5.544 5.544 0 0 1-1.512-.493v-2.63a5.033 5.033 0 0 0 3.237 1.2c.333 0 .624-.03.872-.09.249-.06.456-.144.623-.25.166-.108.29-.234.373-.38a1.023 1.023 0 0 0-.074-1.089 2.12 2.12 0 0 0-.537-.5 5.597 5.597 0 0 0-.807-.444 27.72 27.72 0 0 0-1.007-.436c-.918-.383-1.602-.852-2.053-1.405-.45-.553-.676-1.222-.676-2.005 0-.614.123-1.141.369-1.582.246-.441.58-.804 1.004-1.089a4.494 4.494 0 0 1 1.47-.629 7.536 7.536 0 0 1 1.77-.201zm-15.113.188h9.563v2.166H9.506v9.646H6.789v-9.646H3.375z"/>
+      </svg>
+    ),
+  },
 ];
 
-const Hero = () => {
-  const nameChars = 'Anuj Raj.'.split('');
+const nameChars = 'Anuj Raj.'.split('');
 
+const Hero = () => {
   return (
     <section className="relative min-h-[100dvh] flex items-center overflow-hidden">
+
       {/* Noise overlay */}
       <div className="noise absolute inset-0 pointer-events-none" />
 
+      {/* AI-generated background — dimmed */}
+      <div className="absolute inset-0 -z-10 overflow-hidden">
+        <img
+          src="/hero-bg.png"
+          alt=""
+          aria-hidden="true"
+          className="w-full h-full object-cover opacity-[0.18] scale-110"
+          style={{ filter: 'blur(2px)' }}
+        />
+        <div className="absolute inset-0" style={{ background: 'linear-gradient(to right, #0D0D0F 45%, rgba(13,13,15,0.6) 100%)' }} />
+        <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, #0D0D0F 0%, transparent 40%)' }} />
+      </div>
+
       {/* Ambient blobs */}
-      <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] rounded-full blur-[120px] -z-10 animate-blob"
-        style={{ background: 'radial-gradient(circle, rgba(0,255,255,0.12) 0%, transparent 70%)' }} />
-      <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] rounded-full blur-[100px] -z-10 animate-blob animation-delay-2000"
-        style={{ background: 'radial-gradient(circle, rgba(0,128,255,0.10) 0%, transparent 70%)' }} />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] rounded-full blur-[80px] -z-10 animate-blob animation-delay-4000"
-        style={{ background: 'radial-gradient(circle, rgba(155,79,150,0.08) 0%, transparent 70%)' }} />
+      <div
+        className="absolute top-1/4 left-1/4 w-[500px] h-[500px] rounded-full blur-[120px] -z-10 animate-blob"
+        style={{ background: 'radial-gradient(circle, rgba(0,255,255,0.10) 0%, transparent 70%)' }}
+      />
+      <div
+        className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] rounded-full blur-[100px] -z-10 animate-blob animation-delay-2000"
+        style={{ background: 'radial-gradient(circle, rgba(0,128,255,0.08) 0%, transparent 70%)' }}
+      />
 
+      {/* Main content grid */}
       <div className="relative mx-auto max-w-7xl px-6 py-28 w-full">
-        <div className="max-w-5xl">
+        <div className="grid lg:grid-cols-[1fr_420px] gap-12 items-center">
 
-          {/* Availability badge + Adobe achievement */}
-          <div className="mb-8 flex flex-wrap items-center gap-3">
-            <motion.span
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.6 }}
-              className="inline-flex items-center gap-2 rounded-full border px-4 py-1.5 text-sm backdrop-blur-sm"
-              style={{ borderColor: 'rgba(255,255,255,0.1)', background: 'rgba(255,255,255,0.04)' }}
-            >
-              <span className="relative flex h-2 w-2">
-                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75" />
-                <span className="relative inline-flex h-2 w-2 rounded-full bg-green-500" />
+          {/* ── Left: Text content ── */}
+          <div>
+            {/* Badges */}
+            <div className="mb-8 flex flex-wrap items-center gap-3">
+              <motion.span
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.6 }}
+                className="inline-flex items-center gap-2 rounded-full border px-4 py-1.5 text-sm backdrop-blur-sm"
+                style={{ borderColor: 'rgba(255,255,255,0.1)', background: 'rgba(255,255,255,0.04)' }}
+              >
+                <span className="relative flex h-2 w-2">
+                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75" />
+                  <span className="relative inline-flex h-2 w-2 rounded-full bg-green-500" />
+                </span>
+                <span className="text-white/70">Open to opportunities</span>
+              </motion.span>
+
+              <motion.span
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.8 }}
+                className="inline-flex items-center gap-2 rounded-full border px-4 py-1.5 text-sm backdrop-blur-sm"
+                style={{ borderColor: 'rgba(255,213,79,0.3)', background: 'rgba(255,213,79,0.06)', color: '#FFD54F' }}
+              >
+                <Trophy className="w-3.5 h-3.5" />
+                Adobe Hackathon — 12th / 3,00,000+
+              </motion.span>
+            </div>
+
+            {/* Heading */}
+            <h1 className="font-heading font-bold leading-none mb-6" style={{ fontSize: 'clamp(3.5rem, 9vw, 6.5rem)' }}>
+              <motion.span
+                initial={{ opacity: 0, y: 40 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 1.0 }}
+                className="inline-block text-white"
+              >
+                Hi, I'm
+              </motion.span>
+              <br />
+              <span className="text-gradient inline-block">
+                {nameChars.map((char, i) => (
+                  <motion.span
+                    key={i}
+                    initial={{ opacity: 0, y: 60 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: 1.2 + i * 0.06, type: 'spring', stiffness: 100 }}
+                    className={char === ' ' ? 'inline-block w-6 md:w-10' : 'inline-block'}
+                  >
+                    {char}
+                  </motion.span>
+                ))}
               </span>
-              <span className="text-white/70">Open to opportunities</span>
-            </motion.span>
+            </h1>
 
-            <motion.span
+            {/* Bio */}
+            <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.8 }}
-              className="inline-flex items-center gap-2 rounded-full border px-4 py-1.5 text-sm backdrop-blur-sm"
-              style={{ borderColor: 'rgba(255,213,79,0.3)', background: 'rgba(255,213,79,0.06)', color: '#FFD54F' }}
+              transition={{ duration: 0.6, delay: 1.8 }}
+              className="mt-6 text-lg md:text-xl max-w-2xl leading-relaxed"
+              style={{ color: 'rgba(229,231,235,0.65)' }}
             >
-              <Trophy className="w-3.5 h-3.5" />
-              Adobe Hackathon — 12th / 3,00,000+
-            </motion.span>
-          </div>
+              B.Tech IT @ RTU · Full-stack &{' '}
+              <span className="font-semibold" style={{ color: '#9B4F96' }}>.NET developer</span> with production
+              experience in{' '}
+              <span className="font-semibold" style={{ color: '#00ffff' }}>C# / .NET</span>,{' '}
+              <span className="font-semibold" style={{ color: '#61DAFB' }}>React</span>, &{' '}
+              <span className="font-semibold" style={{ color: '#3776AB' }}>Python</span>. I integrate{' '}
+              <span className="font-semibold" style={{ color: '#EE4C2C' }}>LLMs & deep learning</span>{' '}
+              into industrial workflows and build products people actually ship.
+            </motion.p>
 
-          {/* Big heading */}
-          <h1 className="font-heading font-bold leading-none mb-6" style={{ fontSize: 'clamp(3.5rem, 10vw, 7rem)' }}>
-            <motion.span
-              initial={{ opacity: 0, y: 40 }}
+            {/* Tech pills */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 1.0 }}
-              className="inline-block text-white"
+              transition={{ duration: 0.6, delay: 2.1 }}
+              className="mt-7 flex flex-wrap gap-3"
             >
-              Hi, I'm
-            </motion.span>
-            <br />
-            <span className="text-gradient inline-block">
-              {nameChars.map((char, i) => (
+              {techStack.map((tech, idx) => (
                 <motion.span
-                  key={i}
-                  initial={{ opacity: 0, y: 60 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 1.2 + i * 0.06, type: 'spring', stiffness: 100 }}
-                  className={char === ' ' ? 'inline-block w-6 md:w-10' : 'inline-block'}
+                  key={tech.name}
+                  initial={{ opacity: 0, y: 20, scale: 0.8 }}
+                  animate={{ opacity: 1, y: 0, scale: 1 }}
+                  transition={{ duration: 0.4, delay: 2.2 + idx * 0.07 }}
+                  whileHover={{ y: -3, scale: 1.05 }}
+                  className="group relative cursor-default flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium backdrop-blur-sm transition-all duration-300"
+                  style={{
+                    border: '1px solid rgba(255,255,255,0.1)',
+                    background: 'rgba(255,255,255,0.04)',
+                    color: 'rgba(255,255,255,0.6)',
+                  }}
                 >
-                  {char}
+                  <span style={{ color: tech.color }}>{tech.icon}</span>
+                  <span className="transition-colors duration-300 group-hover:text-white">{tech.name}</span>
+                  <span
+                    className="pointer-events-none absolute inset-0 -z-10 rounded-full opacity-0 blur-md group-hover:opacity-40 transition-opacity duration-300"
+                    style={{ backgroundColor: tech.color }}
+                  />
                 </motion.span>
               ))}
-            </span>
-          </h1>
+            </motion.div>
 
-          {/* Bio — updated to match resume */}
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 1.8 }}
-            className="mt-6 text-lg md:text-xl max-w-3xl leading-relaxed"
-            style={{ color: 'rgba(229,231,235,0.65)' }}
-          >
-            B.Tech IT @ RTU · Full-stack &{' '}
-            <span className="font-semibold" style={{ color: '#9B4F96' }}>.NET developer</span> with production experience in{' '}
-            <span className="font-semibold" style={{ color: '#00ffff' }}>C# / .NET</span>,{' '}
-            <span className="font-semibold" style={{ color: '#61DAFB' }}>React</span>, &{' '}
-            <span className="font-semibold" style={{ color: '#3776AB' }}>Python</span>. I integrate{' '}
-            <span className="font-semibold" style={{ color: '#EE4C2C' }}>LLMs & deep learning</span>{' '}
-            into industrial workflows and build products people actually ship.
-          </motion.p>
+            {/* CTA buttons */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 2.6 }}
+              className="mt-10 flex flex-wrap gap-4"
+            >
+              <motion.a
+                href="#projects"
+                whileHover={{ scale: 1.04, y: -1 }}
+                whileTap={{ scale: 0.97 }}
+                className="relative group inline-flex items-center gap-2 px-7 py-3.5 rounded-lg text-sm font-semibold text-black overflow-hidden"
+                style={{ background: 'linear-gradient(135deg, #00ffff, #0080ff)' }}
+              >
+                View My Work
+                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+              </motion.a>
 
-          {/* Tech pills */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 2.1 }}
-            className="mt-7 flex flex-wrap gap-3"
-          >
-            {techStack.map((tech, idx) => (
-              <motion.span
-                key={tech.name}
-                initial={{ opacity: 0, y: 20, scale: 0.8 }}
-                animate={{ opacity: 1, y: 0, scale: 1 }}
-                transition={{ duration: 0.4, delay: 2.2 + idx * 0.07 }}
-                whileHover={{ y: -3, scale: 1.05 }}
-                className="group relative cursor-default flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium backdrop-blur-sm transition-all duration-300"
+              <motion.a
+                href="https://github.com/anujrajincludemyself"
+                target="_blank"
+                rel="noreferrer"
+                whileHover={{ scale: 1.04, y: -1 }}
+                whileTap={{ scale: 0.97 }}
+                className="inline-flex items-center gap-2 px-7 py-3.5 rounded-lg text-sm font-semibold transition-all duration-300"
                 style={{
-                  border: '1px solid rgba(255,255,255,0.1)',
+                  border: '1px solid rgba(255,255,255,0.15)',
                   background: 'rgba(255,255,255,0.04)',
-                  color: 'rgba(255,255,255,0.6)',
+                  color: 'rgba(255,255,255,0.8)',
                 }}
               >
-                <span style={{ color: tech.color }} className="transition-colors duration-300">
-                  {tech.icon}
-                </span>
-                <span className="transition-colors duration-300 group-hover:text-white">{tech.name}</span>
-                <span
-                  className="pointer-events-none absolute inset-0 -z-10 rounded-full opacity-0 blur-md group-hover:opacity-40 transition-opacity duration-300"
-                  style={{ backgroundColor: tech.color }}
-                />
-              </motion.span>
-            ))}
-          </motion.div>
+                <Github className="w-4 h-4" />
+                GitHub
+              </motion.a>
 
-          {/* CTA buttons */}
+              <div className="flex items-center gap-3">
+                {[
+                  { href: 'https://www.linkedin.com/in/anujrajmish', icon: <Linkedin className="w-5 h-5" />, label: 'LinkedIn' },
+                  { href: 'mailto:anujraj24go@gmail.com', icon: <Mail className="w-5 h-5" />, label: 'Email' },
+                ].map(({ href, icon, label }) => (
+                  <motion.a
+                    key={label}
+                    href={href}
+                    aria-label={label}
+                    target={href.startsWith('http') ? '_blank' : undefined}
+                    rel={href.startsWith('http') ? 'noreferrer' : undefined}
+                    whileHover={{ scale: 1.12, y: -2 }}
+                    className="p-3 rounded-full transition-all duration-300 group"
+                    style={{
+                      border: '1px solid rgba(255,255,255,0.1)',
+                      background: 'rgba(255,255,255,0.04)',
+                      color: 'rgba(255,255,255,0.6)',
+                    }}
+                  >
+                    <span className="group-hover:text-white transition-colors duration-300">{icon}</span>
+                  </motion.a>
+                ))}
+              </div>
+            </motion.div>
+          </div>
+
+          {/* ── Right: AI visual panel ── */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 2.6 }}
-            className="mt-10 flex flex-wrap gap-4"
+            initial={{ opacity: 0, scale: 0.92, x: 40 }}
+            animate={{ opacity: 1, scale: 1, x: 0 }}
+            transition={{ duration: 1, ease: 'easeOut', delay: 0.8 }}
+            className="hidden lg:block relative"
           >
-            <motion.a
-              href="#projects"
-              whileHover={{ scale: 1.04, y: -1 }}
-              whileTap={{ scale: 0.97 }}
-              className="relative group inline-flex items-center gap-2 px-7 py-3.5 rounded-lg text-sm font-semibold text-black overflow-hidden"
-              style={{ background: 'linear-gradient(135deg, #00ffff, #0080ff)' }}
+            {/* Outer glow ring */}
+            <div
+              className="absolute -inset-4 rounded-3xl blur-2xl opacity-30 animate-pulse"
+              style={{ background: 'linear-gradient(135deg, rgba(0,255,255,0.3), rgba(0,128,255,0.2))' }}
+            />
+            {/* Image frame */}
+            <div
+              className="relative rounded-2xl overflow-hidden border"
+              style={{ borderColor: 'rgba(0,255,255,0.15)', background: 'rgba(255,255,255,0.03)' }}
             >
-              View My Work
-              <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-            </motion.a>
-
-            <motion.a
-              href="https://github.com/anujrajincludemyself"
-              target="_blank"
-              rel="noreferrer"
-              whileHover={{ scale: 1.04, y: -1 }}
-              whileTap={{ scale: 0.97 }}
-              className="group inline-flex items-center gap-2 px-7 py-3.5 rounded-lg text-sm font-semibold transition-all duration-300"
-              style={{
-                border: '1px solid rgba(255,255,255,0.15)',
-                background: 'rgba(255,255,255,0.04)',
-                color: 'rgba(255,255,255,0.8)',
-              }}
-            >
-              <Github className="w-4 h-4" />
-              GitHub
-            </motion.a>
-
-            <div className="flex items-center gap-3">
-              {[
-                { href: 'https://www.linkedin.com/in/anujrajmish', icon: <Linkedin className="w-5 h-5" />, label: 'LinkedIn' },
-                { href: 'mailto:anujraj24go@gmail.com', icon: <Mail className="w-5 h-5" />, label: 'Email' },
-              ].map(({ href, icon, label }) => (
-                <motion.a
-                  key={label}
-                  href={href}
-                  aria-label={label}
-                  target={href.startsWith('http') ? '_blank' : undefined}
-                  rel={href.startsWith('http') ? 'noreferrer' : undefined}
-                  whileHover={{ scale: 1.12, y: -2 }}
-                  className="p-3 rounded-full transition-all duration-300 group"
-                  style={{ border: '1px solid rgba(255,255,255,0.1)', background: 'rgba(255,255,255,0.04)', color: 'rgba(255,255,255,0.6)' }}
+              <img
+                src="/hero-bg.png"
+                alt="Neural network visualization"
+                className="w-full h-[420px] object-cover"
+                style={{ opacity: 0.85 }}
+              />
+              {/* Gradient fade to background at bottom */}
+              <div
+                className="absolute inset-0"
+                style={{ background: 'linear-gradient(to bottom, transparent 55%, #0D0D0F 100%)' }}
+              />
+              {/* Floating status badge */}
+              <div className="absolute bottom-5 left-5 right-5">
+                <div
+                  className="inline-flex items-center gap-2 rounded-xl px-4 py-2.5 backdrop-blur-md text-xs font-medium"
+                  style={{ background: 'rgba(0,0,0,0.6)', border: '1px solid rgba(0,255,255,0.2)', color: 'rgba(229,231,235,0.8)' }}
                 >
-                  <span className="group-hover:text-white transition-colors duration-300">{icon}</span>
-                </motion.a>
-              ))}
+                  <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
+                  Full Stack · .NET · AI/ML · Open Source
+                </div>
+              </div>
             </div>
+
+            {/* Decorative corner dots */}
+            <div className="absolute -top-2 -right-2 w-4 h-4 rounded-full" style={{ background: '#00ffff', boxShadow: '0 0 12px #00ffff' }} />
+            <div className="absolute -bottom-2 -left-2 w-3 h-3 rounded-full" style={{ background: '#0080ff', boxShadow: '0 0 10px #0080ff' }} />
           </motion.div>
+
         </div>
       </div>
 
@@ -257,6 +325,7 @@ const Hero = () => {
           <ArrowDown className="w-4 h-4" />
         </motion.div>
       </motion.div>
+
     </section>
   );
 };

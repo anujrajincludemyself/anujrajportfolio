@@ -15,6 +15,7 @@ const projects = [
     accent: '#00ffff',
     status: 'Active',
     badge: '🏆 Top 15 / 100+ Teams',
+    image: '/proj-tasdeeq.png',
     featured: true,
   },
   {
@@ -28,6 +29,7 @@ const projects = [
     live: 'https://khilao-com.vercel.app',
     accent: '#22C55E',
     status: 'Live',
+    image: '/proj-khilao.png',
     featured: true,
   },
   {
@@ -40,6 +42,7 @@ const projects = [
     live: '#',
     accent: '#3178C6',
     status: 'Shipped',
+    image: '/proj-colorjet.png',
     featured: false,
   },
   {
@@ -52,6 +55,7 @@ const projects = [
     accent: '#EE4C2C',
     status: 'Finals',
     badge: '🏆 12th / 3,00,000+',
+    image: '/proj-adobe.png',
     featured: false,
   },
 ];
@@ -78,33 +82,45 @@ const FeaturedCard = ({ project, index }) => (
     />
 
     <div className="grid lg:grid-cols-2">
-      {/* Decorative panel */}
+      {/* Image panel */}
       <div className="relative aspect-video overflow-hidden lg:aspect-auto lg:min-h-[360px]">
-        <div className="absolute inset-0" style={{ background: `linear-gradient(135deg, ${project.accent}08 0%, transparent 60%)` }} />
-        <svg className="absolute inset-0 h-full w-full opacity-[0.05]" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <pattern id={`grid-${project.number}`} width="20" height="20" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
-              <line x1="0" y1="0" x2="0" y2="20" stroke="currentColor" strokeWidth="1" />
-            </pattern>
-          </defs>
-          <rect width="100%" height="100%" fill={`url(#grid-${project.number})`} />
-        </svg>
-        <div className="absolute inset-0 flex items-center justify-center">
-          <div
-            className="flex h-16 w-16 items-center justify-center rounded-2xl backdrop-blur-sm"
-            style={{ border: '1px solid rgba(255,255,255,0.08)', background: 'rgba(255,255,255,0.03)' }}
-          >
-            <ExternalLink className="h-6 w-6" style={{ color: `${project.accent}80` }} />
-          </div>
-        </div>
-        <div className="absolute bottom-6 left-8">
+        {/* AI-generated project image */}
+        <img
+          src={project.image}
+          alt={project.title}
+          className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+          style={{ opacity: 0.75 }}
+        />
+        {/* Color tint overlay */}
+        <div
+          className="absolute inset-0 transition-opacity duration-500"
+          style={{ background: `linear-gradient(135deg, ${project.accent}20 0%, transparent 60%)` }}
+        />
+        {/* Dark gradient toward content side */}
+        <div
+          className="absolute inset-0 hidden lg:block"
+          style={{ background: 'linear-gradient(to right, transparent 60%, rgba(13,13,15,0.95) 100%)' }}
+        />
+        <div
+          className="absolute inset-0 lg:hidden"
+          style={{ background: 'linear-gradient(to bottom, transparent 50%, rgba(13,13,15,0.95) 100%)' }}
+        />
+        {/* Number watermark */}
+        <div className="absolute bottom-4 left-6 z-10">
           <span
             className="font-heading font-bold leading-none select-none"
-            style={{ fontSize: '7rem', color: 'rgba(255,255,255,0.04)' }}
+            style={{ fontSize: '6rem', color: 'rgba(255,255,255,0.07)', textShadow: 'none' }}
             aria-hidden="true"
           >
             {project.number}
           </span>
+        </div>
+        {/* Accent corner badge */}
+        <div className="absolute top-4 left-4 z-10">
+          <div
+            className="w-2.5 h-2.5 rounded-full"
+            style={{ background: project.accent, boxShadow: `0 0 10px ${project.accent}` }}
+          />
         </div>
       </div>
 
@@ -184,21 +200,44 @@ const SmallCard = ({ project, index }) => (
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true, margin: '-60px' }}
     transition={{ duration: 0.6, delay: index * 0.12 }}
-    className="group relative overflow-hidden rounded-2xl p-7 transition-all duration-500"
+    className="group relative overflow-hidden rounded-2xl transition-all duration-500"
     style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.07)' }}
   >
-    <div
-      className="absolute top-0 left-0 right-0 h-[2px] rounded-t-2xl opacity-30 group-hover:opacity-80 transition-opacity duration-500"
-      style={{ background: `linear-gradient(90deg, transparent, ${project.accent}, transparent)` }}
-    />
-    <span
-      className="absolute bottom-4 right-6 font-heading font-bold leading-none select-none"
-      style={{ fontSize: '5rem', color: 'rgba(255,255,255,0.03)' }}
-    >
-      {project.number}
-    </span>
+    {/* Image thumbnail header */}
+    <div className="relative h-40 overflow-hidden">
+      <img
+        src={project.image}
+        alt={project.title}
+        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+        style={{ opacity: 0.65 }}
+      />
+      {/* Color tint */}
+      <div
+        className="absolute inset-0"
+        style={{ background: `linear-gradient(135deg, ${project.accent}25 0%, transparent 60%)` }}
+      />
+      {/* Fade to card body */}
+      <div
+        className="absolute inset-0"
+        style={{ background: 'linear-gradient(to bottom, transparent 30%, rgba(13,13,15,0.97) 100%)' }}
+      />
+      {/* Top accent line */}
+      <div
+        className="absolute top-0 left-0 right-0 h-[2px]"
+        style={{ background: `linear-gradient(90deg, ${project.accent}, ${project.accent}40, transparent)` }}
+      />
+      {/* Number */}
+      <span
+        className="absolute bottom-2 right-4 font-heading font-bold leading-none select-none"
+        style={{ fontSize: '4rem', color: 'rgba(255,255,255,0.06)' }}
+        aria-hidden="true"
+      >
+        {project.number}
+      </span>
+    </div>
 
-    <div className="relative z-10">
+    {/* Card body */}
+    <div className="p-7 relative">
       <div className="flex items-start justify-between mb-4">
         <div>
           <h3 className="font-heading font-bold text-xl text-white mb-1 group-hover:text-[#00ffff] transition-colors duration-300">
