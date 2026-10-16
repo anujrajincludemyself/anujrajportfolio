@@ -7,13 +7,15 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: "#0F0F11",
+        background: "#0D0D0F",
         text: "#E5E7EB",
+        primary: "#00ffff",
         accent: {
           blue: "#3B82F6",
           orange: "#F97316",
           green: "#10B981",
           red: "#EF4444",
+          cyan: "#00ffff",
         }
       },
       fontFamily: {
