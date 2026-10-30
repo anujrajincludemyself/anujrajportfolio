@@ -8,7 +8,7 @@ const experiences = [
     company: 'ColorJet India Ltd',
     duration: 'May 2026 – Aug 2026',
     color: '#9B4F96',
-    emoji: '🏭',
+    emoji: '',
     points: [
       'Developed the frontend and backend of ColorJet\'s RIP software end-to-end in C#/.NET, owning full feature delivery for an industrial fabric-printing workflow.',
       'Integrated Ollama into the RIP software via C#/.NET and C++ to run local LLMs inside the application; fine-tuned LLMs using Unsloth for domain-specific tasks.',
@@ -21,7 +21,7 @@ const experiences = [
     company: 'MediHut',
     duration: 'Jan 2026 – May 2026',
     color: '#00ffff',
-    emoji: '🏥',
+    // emoji: '🏥',
     points: [
       'Engineered cross-platform Rider Delivery App (React Native, Node.js, Prisma, PostgreSQL, Redis) with live dispatch & GPS tracking; cut dispatch latency ~35% via Redis caching + mutex locking.',
       'Built Pharmacy Console CRM serving 2+ live pharmacies; reduced API payloads ~75% (~120KB → <30KB) via field projection and lazy pagination — 50% performance gain.',
@@ -33,7 +33,7 @@ const experiences = [
     company: 'Jesty CRM',
     duration: 'Dec 2025 – Jan 2026',
     color: '#F97316',
-    emoji: '💼',
+    // emoji: '💼',
     points: [
       'Developed React.js components with REST APIs; optimised Node.js/MongoDB backend for a SaaS CRM platform.',
       'Accelerated lead-management workflows by 25% via query optimisation and improved rendering performance.',
@@ -45,7 +45,7 @@ const experiences = [
     company: 'IIT Patna',
     duration: 'Jun 2025 – Jul 2025',
     color: '#22C55E',
-    emoji: '🎓',
+    // emoji: '🎓',
     points: [
       'Built a multi-constraint exam seating allocator (Python, Streamlit) handling sparse/dense fill modes, per-room buffer capacity, and building-adjacency optimisation; deployed live.',
       'Engineered automated clash detection via roll-number set intersections across exam slots.',

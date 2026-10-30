@@ -118,7 +118,7 @@ const Footer = () => {
           className="mt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs"
           style={{ color: 'rgba(229,231,235,0.35)' }}
         >
-          <p>© {new Date().getFullYear()} Anuj Raj. Crafted with ❤️ and a lot of ☕</p>
+          <p>© {new Date().getFullYear()} Anuj Raj. Crafted with and a lot of </p>
           <motion.button
             onClick={scrollToTop}
             whileHover={{ scale: 1.08, y: -2 }}
